@@ -60,25 +60,37 @@ table {
 --gray: rgb(220, 220, 220);
 --white: rgb(248, 248, 255);
 --reddish: rgb(255, 99, 71);
---main_font: "Roboto-Mono", monospace, sans-serif;
+--main-font: "Quantico", sans-serif;
+--bit-font: "Bitcount Grid Double", system-ui;
 }
 
 /*** UNIVERSAL STYLES ***/
 
-main {
-    font-family: var(--main_font);
-    color: var(--black);
+body {
+    background-image: url("../images/background-texture.avif");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-body, section {
+body, header, section, footer {
+    font-family: var(--main-font);
+    color: var(--black);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    margin: 1rem;
-    padding: 1rem;
+    padding: 1.25rem;
+    margin: 1.5rem;
+    line-height: 1.5;
+    width: 100%;
 }
+
+h1 {
+    font-size: 2rem;
+    font-family: var(--bit-font);
+}
+
 
 .button {
     text-decoration: none;
@@ -99,14 +111,33 @@ body, section {
 }
 
 img {
-    width: 75vw;
-    height: auto;
+    width: 18.75rem;
+    height: 31.25rem;
     max-width: 100%;
-    border: 2px var(--black) solid;
+    padding: 8px;
+    border: 10px var(--white) dotted;
 }
 
-header {
-    background-color: var(--gray);
+header, footer {
+    background-color: var(--white);
+    border: 2px dotted var(--black);
+}
+
+#blurb h2 {
+    visibility: hidden;
+}
+
+#blurb {
+    margin: 0 1.5rem;
+}
+
+#skills_examples h2 {
+    margin: 1.75rem 0;
+    padding: 0.5rem 0.75rem;
+    border: 2px dotted var(--black);
+    font-size: 1.25rem;
+    font-family: var(--bit-font);
+    background-color: var(--white);
 }
 
 .movie_poster {
@@ -115,4 +146,79 @@ header {
     margin: 12px;
     border-radius: 8px;
     border: 4px var(--black) inset;
+}
+
+p {
+    text-align: center;
+}
+
+/*** MOBILE FIRST ***/
+
+header p {
+    padding: 1rem 0;
+}
+
+#top_buttons a, #middle_buttons a{
+    margin: 0 1rem;
+}
+
+/*** MED SCREENS ***/
+
+@media (min-width: 650px) {
+    #skills_examples {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-items: center;
+        align-items: center;
+    }
+
+    #middle_buttons {
+        grid-area: 1 / span 2;
+        justify-content: center;
+    }
+
+    #skills_examples h2 {
+        grid-area: 2 / span 2;
+        text-align: center;
+    }
+
+    #posters {
+        grid-area: span 2;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .movie_poster {
+        align-items: center;
+        justify-content: center;
+    }
+
+    img {
+        max-width: 90%;
+    }
+}
+
+/*** LARGE SCREENS ***/
+
+@media (min-width: 1200px) {
+    #skills_examples {
+        grid-template-columns: auto auto auto auto;
+    }
+
+    #middle_buttons {
+        grid-area: 1 / span 4;
+    }
+
+    #skills_examples h2 {
+        grid-area: 2 / span 4;
+    }
+
+    #posters {
+
+        display: flex;
+        flex-direction: row;
+    }
+
 }
