@@ -1,0 +1,198 @@
+/* CSS BY CRISTOPHER FARRELL */
+/* UPDATED 09.23.2026 */
+
+/*** CSS RESET ***/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*** ROOT STYLES ***/
+:root {
+    --black: rgb(0, 0, 0);
+    --tan: rgb(250, 235, 215);
+    --main-font: "Fira Sans", sans-serif;
+    --title-font: "Mea Culpa", cursive;
+}
+
+/***   UNIVERSAL STYLES   ***/
+body {
+    background-image: url("../images/paper_texture.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    background-color: rgba(250, 235, 215, 0.5);
+    padding: 1.5rem;
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--main-font);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--black);
+    border: 8px var(--black) ridge;
+}
+
+h1 {
+    font-size: 2rem;
+    font-family: var(--title-font);
+    justify-content: center;
+}
+
+#title_poster img {
+    width: 60vw;
+    height: auto;
+    padding: 1rem;
+}
+
+
+#middle, #plot {
+    border: 2px var(--black) inset; 
+    padding: 2rem;
+    margin: 1rem;
+}
+
+#plot img {
+    width: 50vw;
+    height: auto;
+    border-radius: 10px;
+    corner-shape: bevel;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--black);
+    color: var(--tan);
+    padding: 1rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--green);
+}
+
+.button {
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--tan);
+    padding: 14px 20px;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 4px var(--black) outset;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--tan);
+    color: var(--black);
+}
+
+/***   MED SCREEN STYLES   ***/
+@media (min-width: 680px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    main {
+        padding: 2rem;
+        margin: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+
+    #plot {
+        grid-area: 2 / span 2;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    #plot p {
+        align-content: center;
+        padding-right: 1.5rem;
+    }
+}
+
+/***   LARGE SCREEN STYLES   ***/
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #title_poster {
+        grid-area: 1 / span 4;
+        justify-self: center;
+    }
+
+    #middle {
+        grid-area: 2 / span 2;
+    }
+
+    #plot {
+        grid-area: 2 / 3 / span 2;
+    }
+
+}
