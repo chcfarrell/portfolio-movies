@@ -75,6 +75,7 @@ body {
 
 body, header, section, footer {
     font-family: var(--main-font);
+    font-size: medium;
     color: var(--black);
     display: flex;
     flex-direction: column;
@@ -110,13 +111,6 @@ h1 {
     color: var(--black);
 }
 
-img {
-    width: 18.75rem;
-    height: 31.25rem;
-    max-width: 100%;
-    padding: 8px;
-    border: 10px var(--white) dotted;
-}
 
 header, footer {
     background-color: var(--white);
@@ -141,11 +135,23 @@ header, footer {
 }
 
 .movie_poster {
+    width: 20rem;
+    height: auto;
+    aspect-ratio: 2 / 3;
     background-color: var(--gold);
     padding: 12px;
     margin: 12px;
     border-radius: 8px;
     border: 4px var(--black) inset;
+}
+
+img {
+    width: 18em;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    max-width: 100%;
+    padding: 8px;
+    border: 10px var(--white) dotted;
 }
 
 p {
