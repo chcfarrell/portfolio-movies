@@ -161,6 +161,12 @@ footer a {
     transition: background-color 0.3s ease;
 }
 
+.button:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+
 /*** MED SCREENS ***/
 
 @media (min-width: 680px) {
