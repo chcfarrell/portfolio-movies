@@ -1,0 +1,121 @@
+/* CSS BY CRISTOPHER FARRELL */
+/* UPDATED 09.22.2026 */
+
+/*** CSS RESET ***/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*** ROOT STYLES ***/
+:root {
+    --dark-blue: rgb(72, 61, 139);
+    --pink: rgb(255, 105, 180);
+    --white: rgb(245,255,250);
+    --black: rgb(0, 0, 0);
+    --main-font: "Commissioner", sans-serif;
+    --title-font: "Fascinate Inline", system-ui;
+}
+
+/*** UNIVERSAL STYLES ***/
+
+body {
+    background-image: url("../images/leopard-texture.jpg");
+    font-family: var(--main-font);
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: var(--title-font);
+    font-size: 2rem;
+}
+
+img { 
+    width: 80vw;
+    height: auto;
+    max-width: 100%;
+}
+
+#title_poster, #w_d {
+    display: grid;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-items: center;
+}
+
+#title_poster h1, #title_poster img, #r_r_r p, #w_d p {
+    padding: 1.5rem;
+    margin: 1rem;
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+#r_r_r {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    justify-items: left;
+}
+
+#w_d {
+    justify-items: right;
+}
+
+.button {
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 14px 20px;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 4px var(--black) outset;
+    transition: background-color 0.3s ease;
+}
