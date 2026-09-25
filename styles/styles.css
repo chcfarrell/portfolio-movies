@@ -65,7 +65,7 @@ table {
 
 /*** UNIVERSAL STYLES ***/
 body {
-    background-image: url("../images/background-texture.avif");
+    background-image: url("../images/josie_assets/background-texture.avif");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

@@ -65,7 +65,7 @@ table {
 /*** UNIVERSAL STYLES ***/
 
 body {
-    background-image: url("../images/leopard-texture.jpg");
+    background-image: url("../images/josie_assets/leopard-texture.jpg");
     font-family: var(--main-font);
     font-size: 1rem;
     display: flex;
