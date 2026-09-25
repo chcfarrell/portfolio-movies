@@ -13,33 +13,75 @@
         <link rel="stylesheet" href="../styles/menu.css">
     </head>
     <body>
-        <main>
+        <main class="w3-container">
             <header>
                 <h1>The Menu</h1>
                 <p>Presented by Chef Slowik</p>
             </header>
             <div id="middle">
                 <div id="r_r_r">
-                    <p>Rating | R</p>
-                    <p>Runtime | 1h 47m</p>
-                    <p>Release Date | 11.18.2022</p>
+                    <p><span class="bolded">Rating |</span> R</p>
+                    <p><span class="bolded">Runtime |</span> 1h 47m</p>
+                    <p><span class="bolded">Release Date |</span> 11.18.2022</p>
                 </div>
                 <div id="w_d">
-                    <p>Writers | Seth Reiss, Will Tracy</p>
-                    <p>Director | Mark Mylod</p>
+                    <p><span class="bolded">Writers |</span> Seth Reiss, Will Tracy</p>
+                    <p><span class="bolded">Director |</span> Mark Mylod</p>
                 </div>
             </div>
-            <div id="dishes">
-                <img href="../images/menu_assets/amuse_bouche.png" alt="Amuse bouche - cucumber melon, milk snow, charred lace.">
-                <img href="../images/menu_assets/first_course.jpeg" alt="The Island - consists of plants from around the island, rocks from the shore, and barely frozen, filtered seawater that continuously flavors the dish as it melts.">
-                <img href="../images/menu_assets/breadless_bread_plate.jpg" alt="No bread, savory accompaniments.">
+            <div class="dishes">
+                <img class="mySlides" src="../images/menu_assets/amuse_bouche.png" alt="Amuse bouche - cucumber melon, milk snow, charred lace." style="width:100%;display:none">
+                <img class="mySlides" src="../images/menu_assets/first_course.jpeg" alt="The Island - consists of plants from around the island, rocks from the shore, and barely frozen, filtered seawater that continuously flavors the dish as it melts." style="width:100%">
+                <img class="mySlides" src="../images/menu_assets/breadless_bread_plate.jpg" alt="No bread, savory accompaniments." style="width:100%;display:none">
+
+                <div class="w3-grid w3-section" style="grid-template-columns:repeat(3,1fr); gap:8px;">
+                    <img class="demo w3-opacity w3-hover-opacity-off" src="../images/menu_assets/amuse_bouche.png" alt="Amuse bouche - cucumber melon, milk snow, charred lace." style="width:100%;cursor:pointer" onclick="currentDiv(1)" style="grid-area:1/1">
+                    <img class="demo w3-opacity w3-hover-opacity-off" src="../images/menu_assets/first_course.jpeg" alt="The Island - consists of plants from around the island, rocks from the shore, and barely frozen, filtered seawater that continuously flavors the dish as it melts." style="width:100%;cursor:pointer" onclick="currentDiv(2)" style="grid-area:1/2">
+                    <img class="demo w3-opacity w3-hover-opacity-off" src="../images/menu_assets/breadless_bread_plate.jpg" alt="No bread, savory accompaniments." style="width:100%;cursor:pointer" onclick="currentDiv(3)" style="grid-area:1/3">
+                </div>
             </div>
+            <script>
+                let slideIndex = 2;
+
+                function currentDiv(n) {
+                    showDivs(slideIndex = n);
+                }
+
+                function showDivs(n) {
+                    const slides = document.querySelectorAll(".mySlides");
+                    const dots = document.querySelectorAll(".demo");
+
+                    if (n > slides.length) {
+                        slideIndex = 1;
+                    }
+
+                    if (n < 1) {
+                        slideIndex = slides.length;
+                    }
+
+                    slides.forEach(slide => {
+                        slide.style.display = "none";
+                    });
+
+                    dots.forEach(dot => {
+                        dot.classList.remove("w3-opacity-off");
+                    });
+
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].classList.add("w3-opacity-off");
+                }
+                
+                showDivs(slideIndex);
+            </script>
             <div id="plot">
-                <img src="../images/menu_assets/chicken_thigh.png" alt="Roast chicken thigh with a tiny pair of scissors stabbed into it.">
                 <p>
-                    Plot | A young couple travels to a remote island to eat at an exclusive restaurant where the chef has prepared a lavish menu, with some 
+                    <span class="bolded">Plot |</span> A young couple travels to a remote island to eat at an exclusive restaurant where the chef has prepared a lavish menu, with some 
                     shocking surprises.
                 </p>
+            </div>
+            <div id="menu_info">
+                <p>$1250 per person</p>
+                <p>Hawthorn Island</p>
             </div>
         </main>
         <footer>
