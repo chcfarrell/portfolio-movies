@@ -65,10 +65,7 @@ table {
 
 /*** UNIVERSAL STYLES ***/
 body {
-    background-image: url("../images/josie_assets/background-texture.avif");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background-color: var(--black);
 }
 
 body, header, section, footer {
@@ -119,6 +116,7 @@ header, footer {
 }
 
 #blurb {
+    color: var(--white);
     margin: 0 1.5rem;
 }
 
