@@ -105,10 +105,6 @@ h1, #title_poster img, #r_r_r p, #w_d p, #plot {
     border: 12px var(--pink) double; 
 }
 
-#r_r_r p:first-word, #w_d p:first-word {
-    font-weight: bold;
-}
-
 #middle {
     display: flex;
     flex-direction: row;
