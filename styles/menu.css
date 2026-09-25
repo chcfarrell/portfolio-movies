@@ -79,19 +79,13 @@ main {
     font-size: 1rem;
     line-height: 1.5rem;
     color: var(--black);
-    border: 8px var(--black) ridge;
+    border: 2px var(--black) solid;
 }
 
 h1 {
     font-size: 2rem;
     font-family: var(--title-font);
     justify-content: center;
-}
-
-#title_poster img {
-    width: 60vw;
-    height: auto;
-    padding: 1rem;
 }
 
 
