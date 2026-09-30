@@ -24,47 +24,93 @@
                     <a href="tel:+14239307454" class="button">Cell</a>
                 </div>
                 <p>
-                    I am an aspiring full stack developer, with a special interest in web design, both on the front and back end.<br>
-                    My stack so far consists of HTML, CSS, Python, Java, and SQL. I am in the process of learning more every day.<br> 
-                    I am also well versed in adobe softwares such as Photoshop, Illustrator, InDesign, and AfterEffect.
+                    I am an aspiring full stack developer, with a special interest in web design, both on the front and back end.<br><br>
+                    My stack so far consists of HTML, CSS, Python, Java, and SQL. I am in the process of learning more every day.
                 </p>
             </header>
             <section id="blurb">
-                <h2>Blurb</h2>
+                <h2>About Me</h2>
                 <p>
-                    My biggest strengths as a developer are my abilities to learn quickly and communicate succinctly.<br>
+                    My biggest strengths as a developer are my abilities to learn quickly and communicate succinctly.<br><br>
                     I have years of experience in the service industry, which I think gives me unique insight into the customer-facing
-                    side of design.<br> 
+                    side of design.<br><br> 
                     I have also been a manager at two of my former places of work, which shows that when I dedicate myself
-                    to something, I really go above and beyond.<br> 
+                    to something, I really go above and beyond.<br><br> 
                     I would love to be able do that for you!
                 </p>
             </section>
             <section id="skills_examples">
                 <div id="middle_buttons">
-                    <a href="#" class="button">Stack</a>
-                    <a href="#" class="button">Skills</a>
+                    <div class="dropdown">
+                        <button class="button">Stack</button>
+                        <div class="dropdown_content">
+                            Front End:<br>HTML<br>CSS<br>JavaScript<br><br>
+                            Back End:<br>Python<br>Java<br>SQL
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="button">Skills</button>
+                        <div class="dropdown_content">
+                            Software:<br>Illustrator<br>Photoshop<br>InDesign<br>Figma<br><br>
+                            People:<br>Communication<br>Problem Solving<br>Meticulousness 
+                        </div>
+                    </div>
                 </div>
-                <h2>Web Design Examples</h2>
                 <p>Pick a Movie!</p>
                 <div id="posters">
-                    <div class="movie_poster">
+                    <div class="movie_poster fade">
                         <a href="pages/josie.html">
                         <img src="images/josie_assets/josie-poster.jpg" alt="Josie & the Pussycats movie poster"></a>
                     </div>
-                    <div class="movie_poster">
+                    <div class="movie_poster fade">
                         <a href="pages/menu.html">
                             <img src="images/menu_assets/menu-poster.jpg" alt="The Menu movie poster"></a>
                     </div>
-                    <div class="movie_poster">
+                    <div class="movie_poster fade">
                         <a href="pages/nine.html">
                             <img src="images/9_assets/nine-poster.jpg" alt="Nine movie poster"></a>
                     </div>
-                    <div class="movie_poster">
+                    <div class="movie_poster fade">
                         <a href="pages/turbo.html">
                             <img src="images/turbo_assets/turbo-kid-poster.jpg" alt="Turbo Kid movie poster"></a>
                     </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095</a>
+                    <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                    </div>
                 </div>
+                <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
+
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+
+                    function showSlides(n) {
+                        let i;
+                        let slides = document.getElementsByClassName("movie_poster");
+                        let dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) {slideIndex = 1}
+                        if (n < 1) {slideIndex = slides.length}
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex-1].style.display = "block";
+                        dots[slideIndex-1].className += " active";
+                    }
+                </script>
             </section>
             <footer>
                 <a href="#" class="button">Social Media Links</a>
